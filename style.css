@@ -59,11 +59,10 @@ body {
 }
 @media (max-width: 768px) {
   .memory-game-blocks {
-    grid-template-columns: repeat(4, 1fr); 
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     max-width: 100%;
     justify-content: center;
-    margin-top: 30px;
   }
 }
 .memory-game-blocks .game-block {
@@ -78,7 +77,6 @@ body {
   .memory-game-blocks .game-block {
     width: 100% !important;
     height: 120px;
-    margin-bottom: 30px;
   }
 }
 .memory-game-blocks .game-block .face {
@@ -104,16 +102,12 @@ body {
 .memory-game-blocks .game-block .back {
   background-color: #607d8b;
   transform: rotateY(180deg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .memory-game-blocks .game-block .back img {
-  width: 80px;
-  margin-top: 10px;
-}
-@media (max-width: 768px) {
-  .memory-game-blocks .game-block .back img {
-    margin-top: 20px;
-  }
-  
+  width: 75px;
 }
 .memory-game-blocks .game-block.is-flipped,
 .memory-game-blocks .game-block.has-match {
