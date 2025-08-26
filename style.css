@@ -78,7 +78,6 @@ body {
   .memory-game-blocks .game-block {
     width: 100% !important;
     height: 120px;
-    margin-bottom: 30px;
   }
 }
 .memory-game-blocks .game-block .face {
