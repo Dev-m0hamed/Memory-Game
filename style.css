@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #eee;
+}
+.game {
+  min-height: 100vh;
+  padding-top: 20px;
+}
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #e8e8e8;
+  border: 2px solid #2196f3;
+  border-radius: 6px;
+}
+.info .right-tries {
+  color: green;
+  font-weight: bold;
+}
+.info .wrong-tries {
+  font-weight: bold;
+  color: red;
+}
+.memory-game-blocks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+  justify-content: center;
+  user-select: none;
+}
+@media (max-width: 768px) {
+  .memory-game-blocks {
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+    max-width: 100%;
+    justify-content: center;
+    margin-top: 30px;
+  }
+}
+.memory-game-blocks .game-block {
+  height: 100px;
+  width: 200px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .memory-game-blocks .game-block {
+    width: 100% !important;
+    height: 120px;
+    margin-bottom: 30px;
+  }
+}
+.memory-game-blocks .game-block .face {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 6px;
+  text-align: center;
+}
+.memory-game-blocks .game-block .font {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.memory-game-blocks .game-block .font::before {
+  content: "!";
+  font-size: 100px;
+  font-weight: bold;
+  color: #fff;
+}
+.memory-game-blocks .game-block .back {
+  background-color: #607d8b;
+  transform: rotateY(180deg);
+}
+.memory-game-blocks .game-block .back img {
+  width: 80px;
+  margin-top: 10px;
+}
+@media (max-width: 768px) {
+  .memory-game-blocks .game-block .back img {
+    margin-top: 20px;
+  }
+  
+}
+.memory-game-blocks .game-block.is-flipped,
+.memory-game-blocks .game-block.has-match {
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
